@@ -1,63 +1,52 @@
-// INFT 425 - Week 2: Dart Fundamentals & Control Flow
-// Student: Yeboah Daniel
-// Institution: Valley View University
+// ignore_for_file: avoid_print
+// INFT 425 - Week 2: Dart Fundamentals, Experiments & Bus Fare Calculator
+// Student: Yeboah Daniel | Valley View University
 
 void main() {
-  print('=== WEEK 2: DART FUNDAMENTALS ===\n');
-
-  // 1. Variables & Data Types
+  print('=== 1. FIRST DART PROGRAM & VARIABLES ===');
   String studentName = 'Yeboah Daniel';
   int courseCode = 425;
   double targetGpa = 3.8;
   bool isEnrolled = true;
 
-  print('Student: $studentName');
-  print('Course: INFT $courseCode');
-  print('Target GPA: $targetGpa');
-  print('Enrolled: $isEnrolled\n');
+  // Prints four distinct lines
+  print('1. Student Name: $studentName');
+  print('2. Course Code: INFT $courseCode');
+  print('3. Target GPA: $targetGpa');
+  print('4. Enrollment Active: $isEnrolled\n');
 
-  // 2. Control Flow & Operators
-  double testScore = 85.5;
-  String gradeResult = calculateGrade(testScore);
-  print('Test Score: $testScore');
-  print('Calculated Grade: $gradeResult\n');
+  print('=== 2. STRING INTERPOLATION EXPERIMENT (\$ vs \${}) ===');
+  // $ for simple variable lookup vs ${} for expressions/operations
+  print('Simple interpolation (\$): $studentName');
+  print('Expression interpolation (\${}): Upper Case -> ${studentName.toUpperCase()}');
+  print('Expression calculation (\${}): Next Year GPA Target -> ${targetGpa + 0.1}\n');
 
-  // 3. Null Safety Demonstration
-  String? middleName; // Nullable String
-  String displayName = middleName ?? 'No Middle Name Provided';
-  print('Middle Name Check: $displayName\n');      
+  print('=== 3. OPERATORS & HAND CALCULATIONS ===');
+  // Hand Calculation Test:
+  // Score 1 = 80, Score 2 = 90, Average = (80 + 90) / 2 = 85.0
+  double score1 = 80.0;
+  double score2 = 90.0;
+  double calculatedAverage = (score1 + score2) / 2;
+  print('Hand Calculation Verified: (80 + 90) / 2 = $calculatedAverage\n');
 
-  // 4. Function Execution with Named Parameters
-  displayStudentSummary(
-    name: studentName,
-    department: 'Department of Computing Sciences and Engineering',
-    gpa: targetGpa,
-  );
+  print('=== 4. BUS FARE CALCULATOR (Part 13) ===');
+  double distanceInKm = 12.5;
+  double totalFare = calculateBusFare(distanceInKm, isStudent: true);
+  print('Distance: $distanceInKm km');
+  print('Calculated Bus Fare: GH₵ ${totalFare.toStringAsFixed(2)}\n');
 }
 
-// Function with Control Flow (if / else if / else)
-String calculateGrade(double score) {
-  if (score >= 80) {
-    return 'A (Excellent)';
-  } else if (score >= 70) {
-    return 'B (Very Good)';
-  } else if (score >= 60) {
-    return 'C (Good)';
-  } else if (score >= 50) {
-    return 'D (Pass)';
-  } else {
-    return 'F (Fail)';
+/// Bus Fare Calculator Function
+/// Pricing Tiers: Base fare GH₵ 5.00 + GH₵ 1.50/km
+/// Special Rule: 20% discount for registered students
+double calculateBusFare(double distanceKm, {bool isStudent = false}) {
+  double baseFare = 5.0;
+  double ratePerKm = 1.5;
+  double total = baseFare + (distanceKm * ratePerKm);
+
+  if (isStudent) {
+    total *= 0.80; // 20% discount applied
   }
-}
 
-// Function with Required Named Parameters and Ternary Operator
-void displayStudentSummary({
-  required String name,
-  required String department,
-  required double gpa,
-}) {
-  print('--- Academic Summary ---');
-  print('Name: $name');
-  print('Department: $department');
-  print('Academic Status: ${gpa >= 3.0 ? 'Good Standing' : 'Needs Improvement'}');
+  return total;
 }
