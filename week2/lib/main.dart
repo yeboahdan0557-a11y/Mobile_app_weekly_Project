@@ -6,7 +6,7 @@ void main() {
   print('=== 1. FIRST DART PROGRAM & VARIABLES ===');
   String studentName = 'Yeboah Daniel';
   int courseCode = 425;
-  double targetGpa = 3.8;
+  double targetGpa = 2.6;
   bool isEnrolled = true;
 
   // Prints four distinct lines
