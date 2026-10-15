@@ -18,8 +18,12 @@ void main() {
   print('=== 2. STRING INTERPOLATION EXPERIMENT (\$ vs \${}) ===');
   // $ for simple variable lookup vs ${} for expressions/operations
   print('Simple interpolation (\$): $studentName');
-  print('Expression interpolation (\${}): Upper Case -> ${studentName.toUpperCase()}');
-  print('Expression calculation (\${}): Next Year GPA Target -> ${targetGpa + 0.1}\n');
+  print(
+    'Expression interpolation (\${}): Upper Case -> ${studentName.toUpperCase()}',
+  );
+  print(
+    'Expression calculation (\${}): Next Year GPA Target -> ${targetGpa + 0.1}\n',
+  );
 
   print('=== 3. OPERATORS & HAND CALCULATIONS ===');
   // Hand Calculation Test:
