@@ -22,11 +22,11 @@ class Lecturer extends Person {
   int yearsOfExperience;
 
   Lecturer({
-    required String name,
-    required int age,
+    required super.name,
+    required super.age,
     required this.department,
     required this.yearsOfExperience,
-  }) : super(name: name, age: age); // pass name and age up to Person
+  }); // pass name and age up to Person
 
   @override
   String role() => 'Lecturer';
@@ -40,12 +40,12 @@ class Student extends Person {
   String level;
 
   Student({
-    required String name,
-    required int age,
+    required super.name,
+    required super.age,
     required this.program,
     required this.gpa,
     required this.level,
-  }) : super(name: name, age: age);
+  });
 
   @override
   String role() => 'Student';
@@ -57,10 +57,10 @@ class Administrator extends Person {
   String office;
 
   Administrator({
-    required String name,
-    required int age,
+    required super.name,
+    required super.age,
     required this.office,
-  }) : super(name: name, age: age);
+  });
 
   @override
   String role() => 'Administrator';

@@ -50,8 +50,7 @@ class Student extends Person with Evaluable {
   double gpa;
   final List<Course> _courses = [];
 
-  Student(String name, int id, {required this.program, required this.gpa})
-      : super(name, id);
+  Student(super.name, super.id, {required this.program, required this.gpa});
 
   List<Course> get courses => List.unmodifiable(_courses);
 
@@ -76,7 +75,7 @@ class Lecturer extends Person {
   final String department;
   final List<Course> _teaches = [];
 
-  Lecturer(String name, int id, {required this.department}) : super(name, id);
+  Lecturer(super.name, super.id, {required this.department});
 
   List<Course> get teaches => List.unmodifiable(_teaches);
 
