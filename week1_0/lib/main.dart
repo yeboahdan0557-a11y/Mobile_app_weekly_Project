@@ -1,6 +1,6 @@
 // AI-assisted: Generated with Gemini on October 14, 2026. Modified by Yeboah Daniel.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MyApp());
