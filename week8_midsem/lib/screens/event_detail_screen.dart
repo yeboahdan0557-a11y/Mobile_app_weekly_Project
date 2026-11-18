@@ -77,7 +77,7 @@ class EventDetailScreen extends StatelessWidget {
             const SizedBox(height: 24),
             const Center(
               child: Text(
-                'Built by Yeboah Daniel — Index 42500123 — Variant 0',
+                'Built by Yeboah Daniel — ID: 224ES02003711 ',
                 style: TextStyle(fontStyle: FontStyle.italic),
               ),
             ),
